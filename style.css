@@ -86,53 +86,61 @@ nav ul li a:hover {
 
 /* ---------- SECTIONS ---------- */
 section {
-  padding: 5rem 10%;
+   padding: 6rem 10%;
+   position: relative;
+   opacity: 0:
+   transform: translateY(50px);
+   animation: fadeInSection 1s ease forwards;
+   animation-timeline: view();
+   animation-range: entry 20% cover 30%;
 }
 
 section h2 {
   text-align: center;
   color: #66fcf1;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-size: 2rem;
   position: relative;
 }
 
 section h2::after {
   content: "";
-  width: 80px;
+  width: 100px;
   height: 3px;
   background: #45a29e;
   position: absolute;
   bottom: -10px;
-  left: 50%
+  left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
 }
 
 /* ---------- ABOUT ---------- */
 .about p {
-  max-width: 800px;
-  margin: auo;
-  text-align: center;
-  color: #c5c6c7;
+   max-width: 800px;
+   margin: auto;
+   text-align: center;
+   color: #c5c6c7;
+   line-height: 1.8;
 }
 
 /* ---------- EXPERIENCE ---------- */
 .experience .job {
-  background: #1f2833;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+   background: #1f2833;
+   margin: 1.5rem auto;
+   padding: 1.5rem 2rem;
+   border-radius: 12px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   max-width: 800px;
 }
 
 .experience .job:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.15);
+   transform: translateY(-6px);
+   box-shadow: 0 6px 20px rgba(0, 229, 255, 0.15);
 }
 
 .job h3 {
-  color: #66fcf1;
+   color: #66fcf1;
 }
 
 .job span {
@@ -141,16 +149,29 @@ section h2::after {
   margin-bottom: 0.6rem;
 }
 
+.job ul {
+   margin-top: 0.8rem;
+   padding-left: 1.5rem;
+   list-style-type: disc;
+}
+
 /* ---------- EDUCATION ---------- */
 .education .school {
-  background: #1f2833;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 12px;
+   background: #1f2833;
+   margin: 1.5rem auto;
+   padding: 1.5rem 2rem;
+   border-radius: 12px;
+   max-width: 800px;
 }
 
 .education .school h3 {
   color: #66fcf1;
+}
+
+.education yl {
+   margin-top: 0.8rem;
+   padding-left: 1.5rem;
+   list-style-type: circle;
 }
 
 /* ---------- SKILLS ---------- */
@@ -179,6 +200,7 @@ section h2::after {
 .contact p {
   text-align: center;
   margin-bottom: 1rem;
+   color: #c5c6c7;
 }
 
 .contact a {
@@ -211,6 +233,11 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeInSection {
+   0% { opacity: 0; transform: translateY(50px); }
+   100% { opacity: 1; transform: translateY(0); }
+}
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 @media (max-width: 768px) {
   header {
@@ -234,6 +261,6 @@ footer {
   }
 
   section {
-    padding: 3rem 5%;
+    padding: 4rem 6%;
   }
 }
