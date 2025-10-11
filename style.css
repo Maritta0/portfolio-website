@@ -4,6 +4,10 @@
    ==================================== */
 
 /* ---------- GLOBAL RESET ---------- */
+html {
+   scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,41 +26,72 @@ body {
 
 /* ---------- HEADER / NAV ---------- */
 header {
-  background: rgba(15, 15, 25, 0.95);
-  padding: 1rem 4rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+   background: rgba(15, 15, 25, 0.95);
+   padding: 1rem 4rem;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   z-index: 999;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   backdrop-filter: blur(8px);
+   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+   flex-wrap: wrap;
 }
 
-header h1 {
-  font-size: 1.6rem;
+header .intro h1 {
+  font-size: 1.5rem;
   color: #00e5ff;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
+header .intro p {
+   color: #c5c6c7;
+   font-size: 0.9rem;
+}
+nav {
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+}
+
 nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
+   display: flex;
+   list-style: none;
+   gap: 1.5rem;
+   margin-right: 1rem;
 }
 
 nav ul li a {
   color: #f8f9fa;
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
   font-weight: 500;
 }
 
 nav ul li a:hover {
-  color: #00e5ff;
+   color: #66fcf1;
+   text-shadow: 0 0 8px #45a29e;
+}
+
+.social-icons {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.social-icons a {
+   color: #f8f9fa;
+   font-size: 1.5rem;
+   transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+   color: #66fcf1;
+   text-shadow: 0 0 10px #45a29e, 0 0 20px #00e5ff;
+   transform: scale(1.2);
 }
 
 /* ---------- HERO / INTRO ---------- */
@@ -270,18 +305,27 @@ footer {
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 2rem;
-  }
+@media (max-width: 850px) {
+   header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 2rem;
+   }
 
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
+   nav {
+      flex-direction: column;
+      align-text: flex-start;
+      gap: 0.8rem;
+   }
+
+   nav ul {
+      flex-wrap: wrap;
+      gap: 1rem;
+   }
+
+   .social-icons {
+      margin-top: 0.5rem;
+   }
 
   .hero h2 {
     font-size: 2rem;
