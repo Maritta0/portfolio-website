@@ -174,11 +174,36 @@ section h2::after {
   color: #66fcf1;
 }
 
-.education yl {
+.education ul {
    margin-top: 0.8rem;
    padding-left: 1.5rem;
    list-style-type: circle;
 }
+
+/* ---------- EXPERIENCE / EDUCATION SUB-SECTIONS ---------- */
+.experience-item, .education-item {
+   margin-bottom: 3rem;
+   background: #1f2833;
+   padding: 1.5rem;
+   border-radius: 12px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover, .education-item:hove {
+   transform: translateY(-5px);
+   box-shadow: 0 6px 20px rgba(0, 229, 225, 0.15);
+}
+
+/* ---------- LISTS INSIDE SUB-SECTIONS ---------- */
+.ecperience-item ul, .education-item ul {
+   margin-top: 0.5rem;
+   padding-left: 1.5rem;
+}
+
+.experience-item ul li, .education-item ul li {
+   margin-bottom: 0.5rem;
+}
+   
 
 /* ---------- SKILLS ---------- */
 .skills {
