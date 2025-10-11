@@ -129,7 +129,8 @@ header {
 
 /* RISHT SIDE */
 header .intro {
-   text-align: right;
+   text-align: left;
+   padding-left: 1rem;
 }
 
 header .intro h1 {
