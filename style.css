@@ -52,29 +52,18 @@ header {
    flex-wrap: wrap;
 }
 
-header .intro h1 {
-  font-size: 1.5rem;
-  color: #00e5ff;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-header .intro p {
-   color: #c5c6c7;
-   font-size: 0.9rem;
-}
-
-nav {
+/* LEFT SIDE: nav + icons */
+.left-header {
    display: flex;
    align-items: center;
-   gap: 1.5rem;
+   gap: 2rem;
 }
 
+/* MENU STYLING */
 nav ul {
    display: flex;
    list-style: none;
    gap: 1.5rem;
-   margin-right: 1rem;
 }
 
 nav ul li a {
@@ -89,6 +78,7 @@ nav ul li a:hover {
    text-shadow: 0 0 8px #45a29e;
 }
 
+/* SOCIAL ICONS*/ 
 .social-icons {
    display: flex;
    align-items: center;
@@ -97,7 +87,7 @@ nav ul li a:hover {
 
 .social-icons a {
    color: #f8f9fa;
-   font-size: 1.5rem;
+   font-size: 1.4rem;
    transition: all 0.3s ease;
 }
 
@@ -105,6 +95,82 @@ nav ul li a:hover {
    color: #66fcf1;
    text-shadow: 0 0 10px #45a29e, 0 0 20px #00e5ff;
    transform: scale(1.2);
+}
+
+/* RISHT SIDE: name + info */
+header .intro {
+   text-align: right;
+}
+
+header .intro h1 {
+   font-size: 1.5rem; 
+   color: #00e5ff;
+   letter-spacing: 1px;
+   font-weight: 600;
+}
+
+header .intro p{
+   color: #c5c6c7;
+   font-size: 0.9rem;
+}
+
+/* ---------- DROPDOWN (MOBILE MENU) ---------- */
+.menu-toggle {
+   display: none;
+   flex-direction: column;
+   cursor: pointer;
+   gap: 4px;
+}
+
+.menu-toggle span {
+   width: 25px;
+   height: 3px;
+   background: #f8f9fa;
+   border-radius: 3px;
+   transition: all 0.3s ease;
+}
+
+/* Responsive behaviour */ 
+@media (max-width: 850px) {
+   header {
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 1rem 2rem;
+   }
+
+   .left-header {
+      width: 100%;
+      justify-content: space-between;
+   }
+
+   .menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(15, 15, 25, 0.98);
+      width: 100%;
+      padding: 1rem 0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      text-align: center;
+   }
+
+   .menu.active {
+      display: flex;
+   }
+
+   .menu-toggle {
+      display: flex;
+   }
+
+   .social-icons {
+      display: none; /* hide icons in dropdown for clean look */
+   }
+
+   header .intro {
+      text-align: center;
+      margin-top: 1rem;
+   }
 }
 
 /* ---------- HERO / INTRO ---------- */
