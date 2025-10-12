@@ -60,7 +60,10 @@ header .intro p {
 .right-header {
    display: flex;
    align-items: center;
+   justify-content: flex-end;
+   flex-grow: 1;
    gap: 1.5rem;
+   position: relative;
 }
 
 /* SOCIAL ICONS */ 
@@ -84,8 +87,8 @@ header .intro p {
 
 /* DROPDOWN MENU */
 .dropdown {
-   position: relative;
-   display: inline-block;
+   position: absolute;
+   right: 0;
 }
 
 .dropbtn {
