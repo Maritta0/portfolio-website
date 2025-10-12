@@ -56,14 +56,13 @@ header .intro p {
    font-size: 0.9rem;
 }
 
-/* RIGHT SIDE */
+/* RIGHT SIDE (SOCIALS + MENU) */
 .right-header {
    display: flex;
    align-items: center;
    justify-content: flex-end;
    flex-grow: 1;
    gap: 1.5rem;
-   position: relative;
 }
 
 /* SOCIAL ICONS */ 
@@ -87,8 +86,8 @@ header .intro p {
 
 /* DROPDOWN MENU */
 .dropdown {
-   position: absolute;
-   right: 0;
+   position: relative;
+   margin-left: auto;
 }
 
 .dropbtn {
@@ -124,7 +123,7 @@ header .intro p {
    padding: 12px 16px; 
    text-decoration: none;
    display: block;
-   transition: backgrround 0.3s ease, color 0.3s ease;
+   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .dropdown-content a:hover {
