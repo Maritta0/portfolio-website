@@ -60,8 +60,28 @@ header .intro p {
 .right-header {
    display: flex;
    align-items: center;
-   gap: 2rem;
+   gap: 1.5rem;
 }
+
+/* SOCIAL ICONS */ 
+.social-icons {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.social-icons a {
+   color: #f8f9fa;
+   font-size: 1.4rem;
+   transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+   color: #66fcf1;
+   text-shadow: 0 0 10px #45a29e, 0 0 20px #00e5ff;
+   transform: scale(1.2);
+}
+
 /* DROPDOWN MENU */
 .dropdown {
    position: relative;
@@ -112,25 +132,6 @@ header .intro p {
 /* Show dropdown on hover (desktop) */
 .dropdown:hover .dropdown-content {
    display: block;
-}
-
-/* SOCIAL ICONS */ 
-.social-icons {
-   display: flex;
-   align-items: center;
-   gap: 1rem;
-}
-
-.social-icons a {
-   color: #f8f9fa;
-   font-size: 1.4rem;
-   transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-   color: #66fcf1;
-   text-shadow: 0 0 10px #45a29e, 0 0 20px #00e5ff;
-   transform: scale(1.2);
 }
 
 /* ---------- HERO / INTRO ---------- */
