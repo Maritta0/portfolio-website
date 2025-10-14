@@ -253,14 +253,14 @@
           // LEFT BUTTERFLY 
           const bLeft = document.createElement('div');
           bLeft.className = `butterfly left ${colors[idx % colors.length]}`;
-          bLeft.style.top = `${10 + (idx * 8} % 50}%`;
+          bLeft.style.top = `${10 + ((idx * 8) % 50)}%`;
           bLeft.style.setProperty('--i', idx); // used for animation-delay if needed
           // randomise vertical position slightly 
           sec.appendChild(bLeft);
           // RIGHT BUTTERFLY 
           const bRight = document.createElement('div');
           bRight.className = `butterfly right ${colors[(idx + 1) % colors.length]}`;
-          bRight.style.top = `${15 + (idx * 7} % 50}%`;
+          bRight.style.top = `${15 + ((idx * 7) % 50)}%`;
           bRight.style.setProperty('--i', idx + 1);
           sec.appendChild(bRight);
         });
