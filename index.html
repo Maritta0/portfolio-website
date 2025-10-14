@@ -207,5 +207,42 @@
 
     <!-- Floating background Canvas -->
     <canvas id="backgroundCanvas"></canvas>
+
+    <script>
+      const canvas = document.getElementById("backgroundCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      window.addEcentListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+      let hueShift = 0;
+      function drawRibbons() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const time = Date.now() * 0.0002;
+        hueShift += 0.5;
+        for (let i = 0; i < 4; i++) {
+          ctx.beginPath();
+          for (let x = 0; x < canvas.width; x += 10) {
+            const y =
+              Math.sin((x * 0.002) + (i * 2) + time) * 80 +
+              Math.cos((x * 0.004) + time) * 40 +
+              canvas.height / 2;
+            ctx.lineTo(x, y);
+          }
+          const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+          gradient.addColorStop(0, 'hsl(${(180 + hueShift) % 360}, 100%, 70%)');
+          gradient.addColorStop(0.5, 'hsl(${(260 + hueShift) % 360}, 100%, 70%)');
+          gradient.addColorStop(1, 'hsl(${(120 + hueShift) % 360}, 100%, 70%)');
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = 1.2;
+          ctx.globalAlpha = 0.3;
+          ctx.stroke();
+        }
+        requestAnimationFrame(drawRibbons);
+      }
+      drawRibbons();
+    </script>
   </body>
 </html>
