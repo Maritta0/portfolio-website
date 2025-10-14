@@ -490,15 +490,15 @@ footer {
 
 /* COLOUR VARIATION BUTTERFLIES */
 .butterfly.glow-cyan { 
-   filter: drop-shadow(0 0 30px #66fcf1) saturate(1.6); brightness(1.4);
+   filter: drop-shadow(0 0 30px #66fcf1) saturate(1.6) brightness(1.4);
 }
 
 .butterfly.glow-purple { 
-   filter: drop-shadow(0 0 30px #a066ff) saturate(1.6); brightness(1.4);
+   filter: drop-shadow(0 0 30px #a066ff) saturate(1.6) brightness(1.4);
 }
 
 .butterfly.glow-green { 
-   filter: drop-shadow(0 0 30px #00ffb3) saturate(1.6); brightness(1.4);
+   filter: drop-shadow(0 0 30px #00ffb3) saturate(1.6) brightness(1.4);
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
