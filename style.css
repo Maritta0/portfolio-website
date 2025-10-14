@@ -431,6 +431,7 @@ footer {
    }
 }
 
+/* ---------- BACKGROUND RIBBONS & BUTTERFLIES ---------- */ 
 #backgroundCanvas {
    position: fixed;
    top: 0;
@@ -442,66 +443,69 @@ footer {
    pointer-events: none;
 }
 
+/* BASE BUTTERFLY */ 
 .butterfly {
    position: absolute;
-   width: 44px;
-   height: 44px;
+   width: 46px;
+   height: 46px;
    background-image: url('butterfly.png');
    background-size: contain;
    background-repeat: no-repeat;
-   filter: drop-shadow(0 0 18px #66fcf1) saturate(1.2) brightness(1.05);
-   opacity: 1.8;
+   filter: drop-shadow(0 0 25px #66fcf1) saturate(1.4) brightness(1.3);
+   opacity: 1;
    mix-blend-mode: screen; /*helps glow stand out on dark bg */
    pointer-events: none; /*don't block clicks */ 
    will-change: transform, opacity;
+   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-/* LEFT-SIDE FLOAT */
+/* LEFT-SIDE MOTION */
 .butterfly.left {
    left: 4%;
-   top: 18%;
-   animation: floatLeft 13s ease-in-out infinite;
-   animation-delay: calc(var(--i,0) * 0.8s);
+   animation: floatLeft 14s ease-in-out infinite;
 }
 
-/* RIGHT-SIDE FLOAT */ 
+/* RIGHT-SIDE MOTION */ 
 .butterfly.right {
    right: 4%;
-   top: 30%;
-   animation: floatRight 15s ease-in-out infinite;
-   animation-delay: calc(var(--i,0) * 0.9s);
+   animation: floatRight 16s ease-in-out infinite;
 }
 
+/* FLOAT ANIMATION */ 
 @keyframes floatLeft {
-   0% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
-   25% { transform: translate(36px,-58px) rotate(8deg); opacity: 1; }
-   50% { transform: translate(80px,6px) rotate(-10deg); opacity: 0.95; }
-   75% { transform: translate(34px,58px) rotate(6deg); opacity: 1; }
-   100% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
+   0% { transform: translate(0,0) rotate(0deg); opacity: 1; }
+   25% { transform: translate(40px,-60px) rotate(10deg); }
+   50% { transform: translate(80px,10px) rotate(-8deg); }
+   75% { transform: translate(40px,60px) rotate(8deg); }
+   100% { transform: translate(0,0) rotate(0deg); opacity: 1; }
 }
 
 @keyframes floatRight {
-   0% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
-   25% { transform: translate(-46px,-44px) rotate(-6deg); opacity: 1; }
-   50% { transform: translate(-92px,10px) rotate(8deg); opacity: 0.95; }
-   75% { transform: translate(-48px,66px) rotate(-8deg); opacity: 1; }
-   100% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
+   0% { transform: translate(0,0) rotate(0deg); opacity: 1; }
+   25% { transform: translate(-40px,-50px) rotate(-8deg); }
+   50% { transform: translate(-80px,10px) rotate(6deg); }
+   75% { transform: translate(-40px,60px) rotate(-10deg); }
+   100% { transform: translate(0,0) rotate(0deg); opacity: 1; }
 }
 
 /* COLOUR VARIATION BUTTERFLIES */
-.butterfly.glow-cyan { filter: drop-shadow(0 0 20px #66fcf1) saturate(1.2); }
-.butterfly.glow-purple { filter: drop-shadow(0 0 20px #a066ff) saturate(1.2); }
-.butterfly.glow-green { filter: drop-shadow(0 0 20px #00ffb3) saturate(1.2); }
+.butterfly.glow-cyan { 
+   filter: drop-shadow(0 0 30px #66fcf1) saturate(1.6); brightness(1.4);
+}
 
-section {
-   position: relative;
+.butterfly.glow-purple { 
+   filter: drop-shadow(0 0 30px #a066ff) saturate(1.6); brightness(1.4);
+}
+
+.butterfly.glow-green { 
+   filter: drop-shadow(0 0 30px #00ffb3) saturate(1.6); brightness(1.4);
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
 @media (max-width: 850px) {
    .butterfly {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
    }
 
    .butterfly.left {
