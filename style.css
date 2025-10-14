@@ -442,6 +442,31 @@ footer {
    pointer-events: none;
 }
 
+.butterfly {
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   background-image: url('https://pngtree.com/freepng/butterfly-outline-simple-icon-graphic-illustration-vector_15360983.html');
+   background-size: contain;
+   background-repeat: no-repeat;
+   filter: drop-shadow(0 0 6px #66fcf1);
+   opacity: 0.8;
+   animation: floatButterfly 12s ease-in-out infinite;
+}
+
+@keyframes floatButterfly {
+   0% { transform: translate(0, 0) rotate(0deg); opacity: 0.8; }
+   25% { transform: translate(40px, -60px) rotate(10deg); opacity: 1; }
+   50% { transform: translate(80px, 0) rotate(-10deg); opacity: 0.9; }
+   75% { transform: translate(40px, 60px) rotate(8deg); opacity: 1; }
+   100% { transform: translate(0, 0) rotate(0deg); opacity: 0.8; }
+}
+
+/* COLOUR VARIATION BUTTERFLIES */
+.butterfly:nth-child(1) { filter: drop-shadow(0 0 10px #66fcf1); }
+.butterfly:nth-child(2) { filter: drop-shadow(0 0 10px #a066ff); animation-delay: 3s; }
+.butterfly:nth-child(3) { filter: drop-shadow(0 0 10px #00ffb3); animation-delay: 6s; }
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 @media (max-width: 850px) {
    header {
