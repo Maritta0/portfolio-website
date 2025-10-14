@@ -251,5 +251,29 @@
       }
       drawRibbons();
     </script>
+
+    <script>
+      (function addButterfliesToSections() {
+        const sections = document.querySelectorAll("section");
+        const colors = ['glow-cyan','glow-purple','glow-green'];
+        sections.forEach((sec, idx) => {
+          // LEFT BUTTERFLY 
+          const bLeft = document.createElement('div');
+          bLeft.className = `butterfly left ${colors[idx % colors.length]}`;
+          bLeft.style.setProperty('--i', idx); // used for animation-delay if needed
+          // randomise vertical position slightly 
+          const topLeft = 12 + (idx * 6) % 40;
+          bLeft.style.tip = `${topLeft}%`;
+          sec.appendChild(bLeft);
+          // RIGHT BUTTERFLY 
+          const bRight = document.createElement('div');
+          bRight.className = `butterfly right ${colors[(idx+1) % colors.length]}`;
+          bRight.style.setProperty('--i', idx+1);
+          const topRight = 20 + (idx * 4) % 50;
+          bRight.style.top = `${topRight}%`;
+          sec.appendChild(bRight);
+        });
+      })();
+    </script>
   </body>
 </html>
