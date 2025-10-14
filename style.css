@@ -450,7 +450,7 @@ footer {
    background-size: contain;
    background-repeat: no-repeat;
    filter: drop-shadow(0 0 12px #66fcf1);
-   opacity: 1.8;
+   opacity: 2;
    animation: floatButterfly 12s ease-in-out infinite;
 }
 
