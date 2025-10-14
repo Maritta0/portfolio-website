@@ -40,7 +40,7 @@ header {
 }
 
 /* LEFT SIDE */
-header .into {
+header .intro {
    text-align: left;
 }
 
@@ -446,7 +446,7 @@ footer {
    position: absolute;
    width: 40px;
    height: 40px;
-   background-image: url('https://pngtree.com/freepng/butterfly-outline-simple-icon-graphic-illustration-vector_15360983.html');
+   background-image: url('butterfly.png');
    background-size: contain;
    background-repeat: no-repeat;
    filter: drop-shadow(0 0 6px #66fcf1);
