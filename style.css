@@ -444,31 +444,76 @@ footer {
 
 .butterfly {
    position: absolute;
-   width: 40px;
-   height: 40px;
+   width: 44px;
+   height: 44px;
    background-image: url('butterfly.png');
    background-size: contain;
    background-repeat: no-repeat;
-   filter: drop-shadow(0 0 12px #66fcf1);
+   filter: drop-shadow(0 0 18px #66fcf1) saturate(1.2) brightness(1.05);
    opacity: 1.8;
-   animation: floatButterfly 12s ease-in-out infinite;
+   mix-blend-mode: screen; /*helps glow stand out on dark bg */
+   pointer-events: none; /*don't block clicks */ 
+   will-change: transform, opacity;
 }
 
-@keyframes floatButterfly {
-   0% { transform: translate(0, 0) rotate(0deg); opacity: 1.8; }
-   25% { transform: translate(40px, -60px) rotate(10deg); opacity: 2; }
-   50% { transform: translate(80px, 0) rotate(-10deg); opacity: 1.9; }
-   75% { transform: translate(40px, 60px) rotate(8deg); opacity: 2; }
-   100% { transform: translate(0, 0) rotate(0deg); opacity: 1.8; }
+/* LEFT-SIDE FLOAT */
+.butterfly.left {
+   left: 4%;
+   top: 18%;
+   animation: floatLeft 13s ease-in-out infinite;
+   animation-delay: calc(var(--i,0) * 0.8s);
+}
+
+/* RIGHT-SIDE FLOAT */ 
+.butterfly.right {
+   right: 4%;
+   top: 30%;
+   animation: floatRight 15s ease-in-out infinite;
+   animation-delay: calc(var(--i,0) * 0.9s);
+}
+
+@keyframes floatLeft {
+   0% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
+   25% { transform: translate(36px,-58px) rotate(8deg); opacity: 1; }
+   50% { transform: translate(80px,6px) rotate(-10deg); opacity: 0.95; }
+   75% { transform: translate(34px,58px) rotate(6deg); opacity: 1; }
+   100% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
+}
+
+@keyframes floatRight {
+   0% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
+   25% { transform: translate(-46px,-44px) rotate(-6deg); opacity: 1; }
+   50% { transform: translate(-92px,10px) rotate(8deg); opacity: 0.95; }
+   75% { transform: translate(-48px,66px) rotate(-8deg); opacity: 1; }
+   100% { transform: translate(0,0) rotate(0deg); opacity: 0.95; }
 }
 
 /* COLOUR VARIATION BUTTERFLIES */
-.butterfly:nth-child(1) { filter: drop-shadow(0 0 12px #66fcf1); }
-.butterfly:nth-child(2) { filter: drop-shadow(0 0 12px #a066ff); animation-delay: 3s; }
-.butterfly:nth-child(3) { filter: drop-shadow(0 0 12px #00ffb3); animation-delay: 6s; }
+.butterfly.glow-cyan { filter: drop-shadow(0 0 20px #66fcf1) saturate(1.2); }
+.butterfly.glow-purple { filter: drop-shadow(0 0 20px #a066ff) saturate(1.2); }
+.butterfly.glow-green { filter: drop-shadow(0 0 20px #00ffb3) saturate(1.2); }
+
+section {
+   position: relative;
+}
 
 /* ---------- RESPONSIVE DESIGN ---------- */
 @media (max-width: 850px) {
+   .butterfly {
+      width: 32px;
+      height: 32px;
+   }
+
+   .butterfly.left {
+      left: 6%;
+      top: 6%;
+   }
+
+   .butterfly.right {
+      right: 6%;
+      top: 8%;
+   }
+   
    header {
       flex-direction: row;
       justify-content: space-between;
