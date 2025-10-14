@@ -239,12 +239,12 @@
             ctx.lineTo(x, y);
           }
           const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-          gradient.addColorStop(0, `hsl(${(180 + hueShift) % 360}, 100%, 70%)`);
-          gradient.addColorStop(0.5, `hsl(${(260 + hueShift) % 360}, 100%, 70%)`);
-          gradient.addColorStop(1, `hsl(${(120 + hueShift) % 360}, 100%, 70%)`);
+          gradient.addColorStop(0, `hsl(${(180 + hueShift) % 360}, 100%, 60%)`);
+          gradient.addColorStop(0.5, `hsl(${(260 + hueShift) % 360}, 100%, 60%)`);
+          gradient.addColorStop(1, `hsl(${(120 + hueShift) % 360}, 100%, 60%)`);
           ctx.strokeStyle = gradient;
           ctx.lineWidth = 1.2;
-          ctx.globalAlpha = 0.3;
+          ctx.globalAlpha = 0.9;
           ctx.stroke();
         }
         requestAnimationFrame(drawRibbons);
