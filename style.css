@@ -131,7 +131,7 @@ header .intro p {
    color: #66fcf1;
 }
 
-/* Show dropdown on hover (desktop) */
+/* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
    display: block;
 }
