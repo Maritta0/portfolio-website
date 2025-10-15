@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maritta Gostanian | Portfolio</title>
-    
     <!-- External stylesheet-->
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css" />
     <!-- Font Awesome for Social Media Icons -->
     <link 
-      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
 
   <body>
-    <!-- ==== HEADER / INTOR ==== -->
+    <!-- ==== HEADER ==== -->
     <header>
       <!-- RIGHT SIDE: Name and Info --> 
       <div class="intro">
         <h1>Maritta Gostanian</h1>
-        <p>Computer Science Major (Honours) | Psychology Minor | York University</p>
-        <p></p>📍North York, ON | 📧<a href="mailto:maritta886@gmail.com">maritta886@gmail.com</a></p>
+        <p>
+          Computer Science Major (Honours) | Psychology Minor | York University
+        </p>
+        <p>📍North York, ON | 📧<a href="mailto:maritta886@gmail.com">maritta886@gmail.com</a></p>
       </div>
 
       <!-- LEFT SIDE: Dropdown Menu + Social Icons --> 
@@ -40,12 +42,12 @@
         </div>
 
         <div class="social-icons">
-          <a href="https://www.instagram.com/maritta_gostanian" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/maritta-gostanian-109bb2287/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://www.tiktok.com/@maritta_gd" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="https://twitter.com/maritta_gd" target="_blank" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.snapchat.com/add/maritta_g20" target="_blank" title="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
-          <a href="https://github.com/Maritta0" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.instagram.com/maritta_gostanian" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/maritta-gostanian-109bb2287/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.tiktok.com/@maritta_gd" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://twitter.com/maritta_gd" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.snapchat.com/add/maritta_g20" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+          <a href="https://github.com/Maritta0" target="_blank"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
     </header>
@@ -59,12 +61,12 @@
             Hello! I'm <strong>Maritta Gostanian</strong>, a creative and detail-oriented 
             individual who's passionate about combining technology, creativity, and analytical
             thinking to solve real-world problems and build meaningful experiences. 
-            My interests span across law, finance, astronomy, and interior design. I'm always eager
-            to learn, improve, and bring ideas to life through dedication and imagination.
+            My interests span across law, finance, astronomy, and interior design. I'm always 
+            eager to learn, improve, and bring ideas to life through dedication and imagination.
           </p>
         </div>
         <div class="about-image">
-          <img src="maritta.jpg">
+          <img src="maritta.jpg" />
         </div>
       </div>
     </section>
@@ -207,7 +209,6 @@
 
     <!-- Floating background Canvas -->
     <canvas id="backgroundCanvas"></canvas>
-
     <script>
       const canvas = document.getElementById("backgroundCanvas");
       const ctx = canvas.getContext("2d");
@@ -245,26 +246,18 @@
       drawRibbons();
     </script>
 
+    <!-- Floating Butterflies near Titles -->
     <script>
-      (function addButterfliesToSections() {
-        const sections = document.querySelectorAll("section");
-        const colors = ['glow-cyan', 'glow-purple', 'glow-green'];
-        sections.forEach((sec, idx) => {
-          // LEFT BUTTERFLY 
-          const bLeft = document.createElement('div');
-          bLeft.className = `butterfly left ${colors[idx % colors.length]}`;
-          bLeft.style.top = `${10 + ((idx * 8) % 50)}%`;
-          bLeft.style.setProperty('--i', idx); // used for animation-delay if needed
-          // randomise vertical position slightly 
-          sec.appendChild(bLeft);
-          // RIGHT BUTTERFLY 
-          const bRight = document.createElement('div');
-          bRight.className = `butterfly right ${colors[(idx + 1) % colors.length]}`;
-          bRight.style.top = `${15 + ((idx * 7) % 50)}%`;
-          bRight.style.setProperty('--i', idx + 1);
-          sec.appendChild(bRight);
-        });
-      })();
+      document.querySelectorAll("section h2").forEach((title, index) => {
+        const left = document.createElement("img");
+        left.src = "left_butterfly.jpg";
+        left.className = `butterfly glow-${["blue", "purple", "green"][index % 3]} left`;
+        title.appendChild(left);
+        const right = document.createElement("img");
+        right.src = "right_butterfly.png";
+        right.className = `butterfly glow-${["blue", "purple", "green"][(index + 1) % 3]} right`;
+        title.appendChild(right);
+      });
     </script>
   </body>
 </html>
