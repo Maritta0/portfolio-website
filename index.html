@@ -222,7 +222,7 @@
       let hueShift = 0;
       function drawRibbons() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const time = Date.now() * 0.0001;
+        const time = Date.now() * 0.0002;
         hueShift += 0.2;
         // Draw multiple flowing lines (ribbons)
         for (let i = 0; i < 5; i++) {
@@ -231,8 +231,7 @@
             const y =
               Math.sin((x * 0.002) + (i * 2) + time) * 90 +
               Math.cos((x * 0.003) + time * 1.2) * 40 +
-              canvas.height / 2 +
-              Math.sin(time + i) * 40;
+              canvas.height / 2 + Math.sin(time + i) * 40;
             ctx.lineTo(x, y);
           }
           // Gradient colors — smoother transitions between my signature tones
