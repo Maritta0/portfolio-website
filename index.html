@@ -212,33 +212,39 @@
     <script>
       const canvas = document.getElementById("backgroundCanvas");
       const ctx = canvas.getContext("2d");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      window.addEventListener("resize", () => {
+      // Adjust canvas size dynamically 
+      function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-      });
+      }
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
       let hueShift = 0;
       function drawRibbons() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const time = Date.now() * 0.0002;
-        hueShift += 0.5;
-        for (let i = 0; i < 4; i++) {
+        const time = Date.now() * 0.0001;
+        hueShift += 0.2;
+        // Draw multiple flowing lines (ribbons)
+        for (let i = 0; i < 5; i++) {
           ctx.beginPath();
-          for (let x = 0; x < canvas.width; x += 10) {
+          for (let x = 0; x < canvas.width; x += 6) {
             const y =
-              Math.sin((x * 0.002) + (i * 2) + time) * 80 +
-              Math.cos((x * 0.004) + time) * 40 +
-              canvas.height / 2;
+              Math.sin((x * 0.002) + (i * 2) + time) * 90 +
+              Math.cos((x * 0.003) + time * 1.2) * 40 +
+              canvas.height / 2 +
+              Math.sin(time + i) * 40;
             ctx.lineTo(x, y);
           }
+          // Gradient colors — smoother transitions between my signature tones
           const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-          gradient.addColorStop(0, `hsl(${(180 + hueShift) % 360}, 100%, 60%)`);
-          gradient.addColorStop(0.5, `hsl(${(260 + hueShift) % 360}, 100%, 60%)`);
-          gradient.addColorStop(1, `hsl(${(120 + hueShift) % 360}, 100%, 60%)`);
+          gradient.addColorStop(0, `hsl(${(190 + hueShift) % 360}, 100%, 66%)`);
+          gradient.addColorStop(0.5, `hsl(${(270 + hueShift) % 360}, 100%, 70%)`);
+          gradient.addColorStop(1, `hsl(${(130 + hueShift) % 360}, 100%, 65%)`);
           ctx.strokeStyle = gradient;
-          ctx.lineWidth = 1.2;
-          ctx.globalAlpha = 0.9;
+          ctx.lineWidth = 1.4;
+          ctx.globalAlpha = 0.6;
+          ctx.shadowColor = "rgba(102, 252, 241, 0.3)";
+          ctx.shadowBlur = 20;
           ctx.stroke();
         }
         requestAnimationFrame(drawRibbons);
