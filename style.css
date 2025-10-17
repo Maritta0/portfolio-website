@@ -441,18 +441,13 @@ footer {
     pointer-events: none;
 }
 
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.background-ribbons {
-    background: linear-gradient(270deg, #00e5ff, #66fcf1, #8a2be2, #39ff14);
-    background-size: 400% 400%;
-    animation: gradientFlow 25s ease infinite;
-    opacity: 0.3; /* adjust visibility */
-    filter: blur(40px); /* for smoothness */
+#backgroundCanvas::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(102, 252, 241, 0.05), transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
 }
 
 /* BUTTERFLY */
